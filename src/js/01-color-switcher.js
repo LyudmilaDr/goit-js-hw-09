@@ -4,7 +4,7 @@ const btnStop = document.querySelector('[data-stop]');
 btnStart.addEventListener('click', onClickStart);
 btnStop.addEventListener('click', onClickStop);
 
-let intervalId;
+let intervalId = null;
 btnStop.disabled = true;
 
 function onClickStart() {
