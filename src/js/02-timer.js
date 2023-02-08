@@ -11,14 +11,6 @@ const secondsEl = document.querySelector('[data-seconds]');
 const timerEl = document.querySelector('.timer');
 const fieldEl = document.querySelector('.field');
 
-inputDate.style.borderRadius = '2px';
-btnStart.style.borderRadius = '4px';
-timerEl.style.display = 'flex';
-timerEl.style.justifyContent = 'space-evenly';
-fieldEl.style.justifyItems = 'center';
-
-
-
 
 btnStart.disabled = true;
 btnStart.addEventListener('click', onClickStart);
@@ -32,7 +24,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         selectedDate = selectedDates[0].getTime();
-        if(selectedDates[0].getTime() < new Date().getTime()){
+        if(selectedDate < new Date().getTime()){
             Notiflix.Notify.failure(`Please choose a date in the future`);
             btnStart.disabled = true;
         } else {
@@ -62,9 +54,7 @@ function convertMs(ms) {
     return  objDate;
   }
   
-//   console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-//   console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-//   console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+
 
 function addLeadingZero(value){
    return value.padStart(2,'0');
@@ -78,7 +68,7 @@ function onClickStart(){
         }
         btnStart.disabled = true
         const timerDate = convertMs(timer);
-        console.log(timerDate);
+        // console.log(timerDate);
 
        
         daysEl.textContent =  addLeadingZero(`${objDate.days}`);
