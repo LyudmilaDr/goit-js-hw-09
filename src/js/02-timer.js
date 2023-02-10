@@ -35,7 +35,7 @@ const options = {
   flatpickr(inputDate, options);
 
 function convertMs(ms) {
-    // Number of milliseconds per unit of time
+   
     const second = 1000;
     const minute = second * 60;
     const hour = minute * 60;
@@ -68,7 +68,6 @@ function onClickStart(){
         }
         btnStart.disabled = true
         const timerDate = convertMs(timer);
-        // console.log(timerDate);
 
        
         daysEl.textContent =  addLeadingZero(`${objDate.days}`);
